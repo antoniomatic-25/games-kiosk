@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+    fx:controller="controller.TopUpAccountController"
+    alignment="center" spacing="10"
+    prefWidth="800.0"
+>
+    
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <children>  
+            <ImageView>
+                <image>
+                    <Image url="@game_icon.png"/>
+                </image>
+            </ImageView>  
+            <Label text="Top-up Account" styleClass="h1"/>
+        </children>
+    </HBox> 
+    
+    <GridPane hgap="10" vgap="10" alignment="CENTER" >
+        <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField text="" fx:id="IDTf" GridPane.columnIndex="1" GridPane.rowIndex="0"/> 
+        <Label text="Top-up Amount:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField text="" fx:id="amountTf" GridPane.columnIndex="1" GridPane.rowIndex="1"/>  
+    </GridPane>
+    
+    <VBox alignment="BOTTOM_CENTER" spacing="10">
+       <Text text="" fx:id="messageTxt"/> 
+       <Button text="Top-up Account" styleClass="button" onAction="#handleTopUp" />
+       <Button text="Close" styleClass="button" onAction="#handleClose" />
+    </VBox>  
+
+
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+</VBox>

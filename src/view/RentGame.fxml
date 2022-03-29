@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+    fx:controller="controller.RentGameController"
+    alignment="center" spacing="10"
+    prefWidth="800.0"
+>
+    
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <children>  
+            <ImageView>
+                <image>
+                    <Image url="@game_icon.png"/>
+                </image>
+            </ImageView>  
+            <Label text="Rent a Game" styleClass="h1"/>
+        </children>
+    </HBox> 
+    
+    <VBox alignment="CENTER" spacing="10">
+        <HBox spacing="10" alignment="CENTER" >
+            <Label text="Customer ID:"/>
+            <TextField text="" fx:id="IDTf"/>
+            <Button text="Select Customer" fx:id="custBtn" styleClass="button" disable="true" onAction="#handleShowGames" />
+        </HBox>
+        <Label text="Available Games" styleClass="h2"/>
+        <TableView fx:id="rentGamesTv" prefWidth="300" prefHeight="400">
+            <placeholder><Label text="No results found."/></placeholder>
+            <columns>
+                <TableColumn text="Title">
+                    <cellValueFactory><PropertyValueFactory property="Title"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Year">
+                    <cellValueFactory><PropertyValueFactory property="Year"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Genre">
+                    <cellValueFactory><PropertyValueFactory property="Genre"/></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Price">
+                    <cellValueFactory><PropertyValueFactory property="Price"/></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button text="Rent Selected Game" fx:id="rentBtn" styleClass="button" disable="true" onAction="#handleRentGame" />
+        <Text text="" fx:id="messageTxt"/>
+    </VBox>
+    
+    
+    <VBox alignment="BOTTOM_CENTER" spacing="10">
+       <Button text="Close" styleClass="button" onAction="#handleClose" />
+    </VBox> 
+
+  
+    <stylesheets>
+        <URL value="@kiosk.css"/>
+    </stylesheets>
+</VBox>
